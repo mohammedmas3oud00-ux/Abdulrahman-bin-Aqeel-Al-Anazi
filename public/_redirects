@@ -1,0 +1,3 @@
+# Cloudflare Pages SPA Routing rule
+# Ensures any page refresh or deep link falls back to index.html with HTTP 200
+/*    /index.html   200

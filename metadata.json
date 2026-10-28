@@ -1,0 +1,6 @@
+{
+  "name": "المحامي عبدالرحمن بن عقيل العنزي | Al-Anazi Law Firm",
+  "description": "الموقع الرسمي لمكتب المحامي عبدالرحمن بن عقيل العنزي - محامي ومستشار قانوني بالخبر لتمثيل الأفراد والشركات في القضايا التجارية والجنائية والعمالية والتوثيق.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
