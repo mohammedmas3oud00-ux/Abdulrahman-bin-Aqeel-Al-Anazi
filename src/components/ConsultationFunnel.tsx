@@ -383,15 +383,44 @@ ${description || 'السلام عليكم ورحمة الله، أود حجز م
               <button
                 type="button"
                 onClick={handleCopy}
-                className="inline-flex items-center gap-1 text-xs text-stone-600 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-stone-200/80 dark:bg-stone-800 text-xs font-bold text-stone-700 hover:text-stone-900 dark:text-stone-300 dark:hover:text-stone-100 transition-colors cursor-pointer"
               >
                 {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>{copied ? t.funnel.copied : t.funnel.copyText}</span>
+                <span>{copied ? (isEn ? 'Copied!' : 'تم النسخ!') : t.funnel.copyText}</span>
               </button>
             </div>
+
+            {/* Clear toast banner when copied */}
+            {copied && (
+              <div className="mb-2.5 p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-xs font-medium flex items-center gap-2 animate-in fade-in duration-200">
+                <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>
+                  {isEn
+                    ? 'Consultation inquiry copied to clipboard! You can now paste it anywhere.'
+                    : 'تم نسخ نص طلب الاستشارة بنجاح إلى الحافظة! يمكنك الآن لصقها في أي محادثة أو مراسلة.'}
+                </span>
+              </div>
+            )}
+
             <pre className="text-xs text-stone-800 dark:text-stone-200 whitespace-pre-wrap font-sans bg-white dark:bg-stone-900/80 p-3.5 rounded-xl border border-stone-200 dark:border-stone-800 leading-relaxed max-h-48 overflow-y-auto">
               {generateFormattedMessage()}
             </pre>
+          </div>
+
+          {/* Explicit WhatsApp Draft Note */}
+          <div className="mb-4 p-3 rounded-2xl bg-amber-50/80 dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-900/50 flex items-start gap-2.5 text-amber-900 dark:text-amber-200 text-xs leading-relaxed">
+            <span className="text-sm shrink-0">💡</span>
+            <p>
+              {isEn ? (
+                <>
+                  <strong>Note:</strong> Clicking the button will open WhatsApp with your inquiry drafted and ready. <strong>Please tap the (Send) button inside WhatsApp</strong> to begin your conversation with the office.
+                </>
+              ) : (
+                <>
+                  <strong>تنبيه هـام:</strong> عند الضغط على الزر، سيتم فتح تطبيق واتساب ومعه تفاصيل طلبكم مكتوبة ومجهزة كمسودة؛ <strong>يرجى الضغط على زر (إرسال / Send) داخل تطبيق الواتساب</strong> لبدء المحادثة مع المكتب.
+                </>
+              )}
+            </p>
           </div>
 
           {/* Action CTAs: WhatsApp Primary, Email Secondary */}

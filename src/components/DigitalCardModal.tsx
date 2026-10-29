@@ -43,8 +43,7 @@ export const DigitalCardModal: React.FC<DigitalCardModalProps> = ({
     }
   };
 
-  const qrTargetUrl = encodeURIComponent(`https://wa.me/966569339994?text=${encodeURIComponent('السلام عليكم ورحمة الله، أود الاستفسار عن استشارة قانونية.')}`);
-  const qrImageSrc = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrTargetUrl}&color=14-14-14&bgcolor=F5-F3-EF&margin=1`;
+  const qrImageSrc = '/assets/qr_whatsapp.png';
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-in fade-in duration-200">

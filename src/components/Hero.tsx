@@ -31,7 +31,7 @@ export const Hero: React.FC<HeroProps> = ({
   const ArrowIcon = isEn ? ArrowRight : ArrowLeft;
 
   return (
-    <section id="home" className="relative pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden">
+    <section id="home" className="relative pt-6 pb-12 sm:pt-14 sm:pb-20 md:pt-16 md:pb-24 overflow-hidden">
       {/* Subtle architectural background texture */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.035] dark:opacity-[0.06]">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -46,77 +46,77 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Main Copy (8 Cols on Desktop) */}
           <div className="lg:col-span-7 flex flex-col items-start text-start">
             
             {/* Badges */}
-            <div className="flex flex-wrap items-center gap-2 mb-6">
-              <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-stone-900 text-stone-100 dark:bg-stone-100 dark:text-stone-900 shadow-sm">
-                <ShieldCheck className="w-4 h-4 text-amber-500" />
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold bg-stone-900 text-stone-100 dark:bg-stone-100 dark:text-stone-900 shadow-sm">
+                <ShieldCheck className="w-3.5 h-3.5 text-amber-500" />
                 <span>{t.hero.badge}</span>
               </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-stone-200/80 dark:bg-stone-800 text-stone-800 dark:text-stone-200">
-                <MapPin className="w-3.5 h-3.5 text-stone-600 dark:text-stone-400" />
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-medium bg-stone-200/80 dark:bg-stone-800 text-stone-800 dark:text-stone-200">
+                <MapPin className="w-3 h-3 text-stone-600 dark:text-stone-400" />
                 <span>{t.hero.locationBadge}</span>
               </div>
             </div>
 
             {/* Main Name & Title Heading */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black text-stone-900 dark:text-stone-100 tracking-tight leading-[1.2] mb-3">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-stone-900 dark:text-stone-100 tracking-tight leading-snug sm:leading-[1.2] mb-1.5 sm:mb-3">
               {t.hero.name}
             </h1>
-            <div className="flex items-center gap-2 text-lg sm:text-xl font-bold text-amber-800 dark:text-amber-400 mb-6">
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-700 dark:bg-amber-400 inline-block" />
+            <div className="flex items-center gap-2 text-base sm:text-xl font-bold text-amber-800 dark:text-amber-400 mb-3 sm:mb-6">
+              <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-amber-700 dark:bg-amber-400 inline-block" />
               <span>{t.hero.title}</span>
             </div>
 
-            {/* Tagline & Deep Paragraph */}
-            <h2 className="text-base sm:text-lg font-semibold text-stone-800 dark:text-stone-200 mb-4 leading-relaxed">
+            {/* Tagline & Paragraph (Breathes on mobile) */}
+            <h2 className="text-sm sm:text-lg font-semibold text-stone-800 dark:text-stone-200 mb-2 sm:mb-3 leading-snug">
               {t.hero.tagline}
             </h2>
-            <p className="text-sm sm:text-base text-stone-600 dark:text-stone-300 leading-relaxed max-w-2xl mb-8">
+            <p className="text-xs sm:text-base text-stone-600 dark:text-stone-300 leading-relaxed max-w-2xl mb-6 sm:mb-8">
               {t.hero.description}
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
-              {/* Primary CTA */}
+            {/* CTAs: Primary prominent, Secondary subtle */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto mb-8 sm:mb-10">
+              {/* Primary CTA (Bold & Dominant) */}
               <button
                 type="button"
                 onClick={onBookConsultation}
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-stone-900 hover:bg-black text-stone-100 dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-white font-bold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:px-7 sm:py-4 rounded-xl sm:rounded-2xl bg-stone-900 hover:bg-black text-stone-100 dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-white font-bold text-sm sm:text-base shadow-md hover:shadow-xl transition-all cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span>{t.hero.ctaPrimary}</span>
                 <ArrowIcon className="w-4 h-4" />
               </button>
 
-              {/* Secondary CTA: Direct WhatsApp */}
+              {/* Secondary CTA (Outlined & Subtle) */}
               <a
                 href={FIRM_DETAILS.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-all cursor-pointer transform hover:-translate-y-0.5"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl sm:rounded-2xl border border-stone-300 dark:border-stone-700 bg-white/70 hover:bg-white dark:bg-stone-800/60 dark:hover:bg-stone-800 text-stone-800 dark:text-stone-200 hover:text-emerald-700 dark:hover:text-emerald-400 font-semibold text-xs sm:text-sm transition-all cursor-pointer shadow-2xs"
               >
-                <Phone className="w-4 h-4 text-emerald-200" />
+                <Phone className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                 <span>{t.hero.ctaSecondary}</span>
-                <span className="text-xs bg-emerald-800/80 px-2 py-0.5 rounded-full" dir="ltr">0569339994</span>
+                <span className="text-[11px] font-mono text-stone-500 dark:text-stone-400" dir="ltr">0569339994</span>
               </a>
             </div>
 
             {/* Quick checkmarks */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4 border-t border-stone-300/60 dark:border-stone-800 w-full max-w-xl text-xs font-semibold text-stone-700 dark:text-stone-300">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-4 border-t border-stone-300/60 dark:border-stone-800 w-full max-w-xl text-[11px] sm:text-xs font-semibold text-stone-700 dark:text-stone-300">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
                 <span>{isEn ? 'Ministry of Justice Certified' : 'مرخص عدلياً'}</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
                 <span>{isEn ? 'Rapid Response' : 'استجابة فورية'}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+              <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
+                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
                 <span>{isEn ? 'Absolute Confidentiality' : 'سرية مهنية تامة'}</span>
               </div>
             </div>

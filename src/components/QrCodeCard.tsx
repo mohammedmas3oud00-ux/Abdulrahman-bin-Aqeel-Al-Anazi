@@ -16,9 +16,8 @@ export const QrCodeCard: React.FC<QrCodeCardProps> = ({ isEn = false }) => {
     setTimeout(() => setDownloaded(false), 3000);
   };
 
-  // High quality QR code pointing to official WhatsApp
-  const qrTargetUrl = encodeURIComponent(`https://wa.me/966569339994?text=${encodeURIComponent(isEn ? 'Hello Lawyer Abdulrahman Al-Anazi, I would like to request legal consultation.' : 'السلام عليكم ورحمة الله، أود الاستفسار عن استشارة قانونية لدى مكتبكم الكريم.')}`);
-  const qrImageSrc = `https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=${qrTargetUrl}&color=14-14-14&bgcolor=F5-F3-EF&margin=1`;
+  // Local pre-rendered QR code pointing directly to official WhatsApp
+  const qrImageSrc = '/assets/qr_whatsapp.png';
 
   return (
     <div className="relative rounded-2xl bg-[#F5F3EF] dark:bg-[#1E1E1E] p-6 border border-stone-300 dark:border-stone-700 shadow-md flex flex-col items-center text-center">
